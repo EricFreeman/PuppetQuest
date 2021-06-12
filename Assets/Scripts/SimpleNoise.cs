@@ -18,5 +18,6 @@ public class SimpleNoise : MonoBehaviour
         var z = Mathf.PerlinNoise(Time.time * Frequency, 3) * Amplitude;
         var noise = new Vector3(x, y, z);
         transform.localPosition = _origin + noise;
+        transform.localEulerAngles = new Vector3(x, y, z);
     }
 }

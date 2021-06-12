@@ -10,6 +10,8 @@ public class PlayerHandController : MonoBehaviour
 
     public LayerMask CollisionLayers;
 
+    public static float LastPlayerMovement;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -23,7 +25,7 @@ public class PlayerHandController : MonoBehaviour
         transform.position += input * MouseSpeed * Time.fixedDeltaTime;
 
         var playerGoal = transform.position;
-        playerGoal.y = -5 + (transform.position.y) / 5f;
+        playerGoal.y = -5f + (transform.position.y / 5f);
 
         var playerMovement = Vector3.Lerp(PlayerBody.position, playerGoal, PlayerSpeed * Time.fixedDeltaTime) - PlayerBody.position;
 
@@ -39,6 +41,8 @@ public class PlayerHandController : MonoBehaviour
         movement = canMoveRight || movement < 0 ? movement : 0;
         movement = canMoveLeft || movement > 0 ? movement : 0;
         World.transform.position -= Vector3.right * WalkSpeed * movement * Time.fixedDeltaTime;
+
+        LastPlayerMovement = playerMovement.x;
 
         Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up + (Vector3.right * 2), canMoveRight ? Color.green : Color.red);
         Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up - (Vector3.right * 2), canMoveLeft ? Color.green : Color.red);

@@ -15,23 +15,32 @@ public class PlayerHandController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         var horizontal = Input.GetAxisRaw("Mouse X");
         var vertical = Input.GetAxisRaw("Mouse Y");
         var input = new Vector3(horizontal, vertical, 0);
-        transform.position += input * MouseSpeed * Time.deltaTime;
+        transform.position += input * MouseSpeed * Time.fixedDeltaTime;
 
         var playerGoal = transform.position;
         playerGoal.y = -5 + (transform.position.y) / 5f;
-        var canMoveRight = !Physics.Raycast(PlayerBody.transform.position + Vector3.up, Vector3.right, out RaycastHit hit, 1.25f, CollisionLayers);
-        playerGoal.x = canMoveRight || playerGoal.x < 0 ? playerGoal.x : 0;
-        PlayerBody.position = Vector3.Lerp(PlayerBody.position, playerGoal, PlayerSpeed * Time.deltaTime);
+
+        var playerMovement = Vector3.Lerp(PlayerBody.position, playerGoal, PlayerSpeed * Time.fixedDeltaTime) - PlayerBody.position;
+
+        var canMoveRight = !Physics.Raycast(PlayerBody.position + Vector3.up, Vector3.right, out RaycastHit hit, 2, CollisionLayers);
+        var canMoveLeft = !Physics.Raycast(PlayerBody.position + Vector3.up, -Vector3.right, out RaycastHit hit2, 2, CollisionLayers);
+
+        playerMovement.x = canMoveRight || playerMovement.x < 0 ? playerMovement.x : 0;
+        playerMovement.x = canMoveLeft || playerMovement.x > 0 ? playerMovement.x : 0;
+
+        PlayerBody.position += playerMovement;
 
         var movement = Input.GetAxisRaw("Horizontal");
         movement = canMoveRight || movement < 0 ? movement : 0;
-        World.transform.position -= Vector3.right * WalkSpeed * movement * Time.deltaTime;
+        movement = canMoveLeft || movement > 0 ? movement : 0;
+        World.transform.position -= Vector3.right * WalkSpeed * movement * Time.fixedDeltaTime;
 
-        Debug.DrawLine(PlayerBody.transform.position + Vector3.up, PlayerBody.transform.position + Vector3.up + Vector3.right, Color.red);
+        Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up + (Vector3.right * 2), canMoveRight ? Color.green : Color.red);
+        Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up - (Vector3.right * 2), canMoveLeft ? Color.green : Color.red);
     }
 }

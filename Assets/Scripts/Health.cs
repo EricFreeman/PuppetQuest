@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
 
     private float _lastHitTime;
 
+    public GameObject DeathParticle;
+
     private void Start()
     {
         _mat = MR.material;
@@ -26,17 +28,17 @@ public class Health : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            var dust = Instantiate(DeathParticle, transform.position, Quaternion.identity);
+            dust.transform.parent = transform.parent;
             Destroy(gameObject);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.name == "Sword" && PlayerHandController.LastPlayerMovement > .1f)
         {
-            Debug.Log(PlayerHandController.LastPlayerMovement);
             var damage = Mathf.RoundToInt((PlayerHandController.LastPlayerMovement + .1f) * SpeedDamageMultiplier);
-            Debug.Log(damage);
             CameraScreenShake.Instance.Shake();
             _lastHitTime = Time.time;
             CurrentHealth -= damage;

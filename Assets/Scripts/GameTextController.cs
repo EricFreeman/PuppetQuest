@@ -7,14 +7,12 @@ public class GameTextController : MonoBehaviour
 {
     public static GameTextController Instance;
     public AudioClip SecretAudio;
-    //public AudioClip Audio1;
-    public PlayableDirector Audio2;
+    public PlayableDirector IntroAudio;
+    public PlayableDirector GoodJobCrate;
+    public PlayableDirector CrateJob;
 
     private AudioSource _as;
 
-    public bool HasSaidAudio1;
-    public bool HasSaidAudio2;
-    public bool HasSaidAudio3;
     public bool HasSaidSecretAudio;
 
     void Start()
@@ -23,17 +21,29 @@ public class GameTextController : MonoBehaviour
         _as = GetComponent<AudioSource>();
     }
 
-    private void Update()
-    {
-    }
-
     public void Intro()
     {
         StartCoroutine(WaitFor(2, () =>
         {
-            HasSaidAudio1 = true;
-            HasSaidAudio2 = true;
-            Audio2.Play();
+            IntroAudio.Play();
+            // todo: remove
+            IntroAudio.time = 60f;
+        }));
+    }
+
+    public void OnCrate()
+    {
+        StartCoroutine(WaitFor(.5f, () =>
+        {
+            GoodJobCrate.Play();
+        }));
+    }
+
+    public void OnCrate2()
+    {
+        StartCoroutine(WaitFor(.5f, () =>
+        {
+            CrateJob.Play();
         }));
     }
 
@@ -41,12 +51,11 @@ public class GameTextController : MonoBehaviour
     {
         StartCoroutine(SecretWoodsText2());
     }
-
     private IEnumerator SecretWoodsText2()
     {
         while (!HasSaidSecretAudio)
         {
-            if (!_as.isPlaying && Audio2.state != PlayState.Playing)
+            if (!_as.isPlaying && (IntroAudio.state != PlayState.Playing || IntroAudio.time > 60))
             {
                 HasSaidSecretAudio = true;
                 _as.clip = SecretAudio;

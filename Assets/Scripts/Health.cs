@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Health : MonoBehaviour
 
     public Vector2 Pitch = new Vector2(.85f, 1.15f);
 
+    public UnityEvent OnDestroy;
+
     private void Start()
     {
         _as = GetComponent<AudioSource>();
@@ -38,6 +41,7 @@ public class Health : MonoBehaviour
             var dust = Instantiate(DeathParticle, transform.position, Quaternion.identity);
             dust.transform.parent = transform.parent;
             Destroy(gameObject);
+            OnDestroy.Invoke();
         }
     }
 

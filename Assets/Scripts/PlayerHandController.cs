@@ -12,6 +12,8 @@ public class PlayerHandController : MonoBehaviour
 
     public static float LastPlayerMovement;
 
+    private float _waitForSeconds = 4f;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -19,6 +21,12 @@ public class PlayerHandController : MonoBehaviour
 
     void FixedUpdate()
     {
+        _waitForSeconds -= Time.deltaTime;
+        if (_waitForSeconds > 0)
+        {
+            return;
+        }
+
         var horizontal = Input.GetAxisRaw("Mouse X");
         var vertical = Input.GetAxisRaw("Mouse Y");
         var input = new Vector3(horizontal, vertical, 0);

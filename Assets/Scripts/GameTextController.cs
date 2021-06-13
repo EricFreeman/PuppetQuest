@@ -68,21 +68,14 @@ public class GameTextController : MonoBehaviour
 
     public void SecretWoodsText()
     {
-        StartCoroutine(SecretWoodsText2());
-    }
-    private IEnumerator SecretWoodsText2()
-    {
-        while (!HasSaidSecretAudio)
+        if (HasSaidSecretAudio)
         {
-            if (!_as.isPlaying && (IntroAudio.state != PlayState.Playing || IntroAudio.time > 60))
-            {
-                HasSaidSecretAudio = true;
-                _as.clip = SecretAudio;
-                _as.Play();
-            }
-
-            yield return null;            
+            return;
         }
+
+        HasSaidSecretAudio = true;
+        _as.clip = SecretAudio;
+        _as.Play();
     }
 
     public IEnumerator WaitFor(float seconds, Action a)

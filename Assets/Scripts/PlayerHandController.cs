@@ -56,10 +56,6 @@ public class PlayerHandController : MonoBehaviour
         Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up + (Vector3.right * 2), canMoveRight ? Color.green : Color.red);
         Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up - (Vector3.right * 2), canMoveLeft ? Color.green : Color.red);
 
-        Debug.Log(transform.position);
-        // x = -7 to 7
-        // y = 6 to 0
-
         var confinedX = Mathf.Max(transform.position.x, -7);
         confinedX = Mathf.Min(confinedX, 7);
 

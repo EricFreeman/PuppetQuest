@@ -6,7 +6,7 @@ public class WoodBlockerSecret : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, Player.position) < 3.8f)
+        if (Vector3.Distance(transform.position, Player.position) < 4.5f)
         {
             GameTextController.Instance.SecretWoodsText();
             Destroy(this);

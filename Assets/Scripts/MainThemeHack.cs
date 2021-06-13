@@ -6,6 +6,8 @@ public class MainThemeHack : MonoBehaviour
 
     private AudioSource _as;
 
+    public float Max = .8f;
+
     private void Start()
     {
         _as = GetComponent<AudioSource>();
@@ -21,10 +23,10 @@ public class MainThemeHack : MonoBehaviour
 
         if (_as.isPlaying)
         {
-            _as.volume = Mathf.Lerp(_as.volume, 1, Time.deltaTime * 1);
+            _as.volume = Mathf.Lerp(_as.volume, Max, Time.deltaTime * 1);
         }
 
-        if (_as.volume == 1)
+        if (_as.volume == Max)
         {
             Destroy(this);
         }

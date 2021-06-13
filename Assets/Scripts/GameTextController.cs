@@ -14,6 +14,7 @@ public class GameTextController : MonoBehaviour
     public PlayableDirector FirstGoblinKilled;
     public PlayableDirector BossFightStarted;
     public PlayableDirector GameOver;
+    public Animator Curtains;
 
     private AudioSource _as;
 
@@ -25,13 +26,19 @@ public class GameTextController : MonoBehaviour
         _as = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (GameOver.state == PlayState.Playing && GameOver.time > 35)
+        {
+            Curtains.SetTrigger("Close");
+        }
+    }
+
     public void Intro()
     {
         StartCoroutine(WaitFor(2, () =>
         {
             IntroAudio.Play();
-            // todo: remove
-            IntroAudio.time = 60f;
         }));
     }
 

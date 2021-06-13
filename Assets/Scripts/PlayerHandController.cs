@@ -12,7 +12,7 @@ public class PlayerHandController : MonoBehaviour
 
     public static float LastPlayerMovement;
 
-    private float _waitForSeconds = 12f;
+    private float _waitForSeconds = 1f;
 
     private void Start()
     {

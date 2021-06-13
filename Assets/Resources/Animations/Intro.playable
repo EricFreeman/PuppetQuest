@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad53e3cee343ebe41969d37c4d57b426, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  SubtitleText: I don't know...I'm not very origianl, but I'm running out of time
+  SubtitleText: I don't know...I'm not very original, but I'm running out of time
     in this game jam, so please bear with me.
 --- !u!114 &-4259696137524643365
 MonoBehaviour:

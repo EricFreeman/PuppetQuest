@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad53e3cee343ebe41969d37c4d57b426, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  SubtitleText: I don't know, it doesn't matter. All that matters if YOU WIN!
+  SubtitleText: I don't know, it doesn't matter. All that matters is YOU WIN!
 --- !u!114 &-4406362042796285480
 MonoBehaviour:
   m_ObjectHideFlags: 1

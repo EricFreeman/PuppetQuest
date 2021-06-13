@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class GameTextController : MonoBehaviour
 {
@@ -28,9 +29,16 @@ public class GameTextController : MonoBehaviour
 
     private void Update()
     {
-        if (GameOver.state == PlayState.Playing && GameOver.time > 35)
+        if (GameOver.state == PlayState.Playing)
         {
-            Curtains.SetTrigger("Close");
+            if (GameOver.time > 35)
+            {
+                Curtains.SetTrigger("Close");
+            }
+            else if (GameOver.time > 43)
+            {
+                SceneManager.LoadScene("ThanksForPlaying");
+            }
         }
     }
 

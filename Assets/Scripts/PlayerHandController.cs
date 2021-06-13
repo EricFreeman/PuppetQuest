@@ -17,6 +17,7 @@ public class PlayerHandController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void FixedUpdate()
@@ -54,5 +55,17 @@ public class PlayerHandController : MonoBehaviour
 
         Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up + (Vector3.right * 2), canMoveRight ? Color.green : Color.red);
         Debug.DrawLine(PlayerBody.position + Vector3.up, PlayerBody.position + Vector3.up - (Vector3.right * 2), canMoveLeft ? Color.green : Color.red);
+
+        Debug.Log(transform.position);
+        // x = -7 to 7
+        // y = 6 to 0
+
+        var confinedX = Mathf.Max(transform.position.x, -7);
+        confinedX = Mathf.Min(confinedX, 7);
+
+        var confinedY = Mathf.Max(transform.position.y, 0);
+        confinedY = Mathf.Min(confinedY, 6);
+
+        transform.position = new Vector3(confinedX, confinedY, transform.position.z);
     }
 }

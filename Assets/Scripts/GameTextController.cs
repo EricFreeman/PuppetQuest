@@ -35,9 +35,10 @@ public class GameTextController : MonoBehaviour
             {
                 Curtains.SetTrigger("Close");
             }
-            else if (GameOver.time > 43)
+            
+            if (GameOver.time > 43)
             {
-                SceneManager.LoadScene("ThanksForPlaying");
+                SceneManager.LoadScene("ThanksForPlaying", LoadSceneMode.Single);
             }
         }
     }

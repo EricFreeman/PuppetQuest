@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -15,8 +16,14 @@ public class Health : MonoBehaviour
 
     public GameObject DeathParticle;
 
+    public List<AudioClip> HitSounds;
+    private AudioSource _as;
+
+    public Vector2 Pitch = new Vector2(.85f, 1.15f);
+
     private void Start()
     {
+        _as = GetComponent<AudioSource>();
         _mat = MR.material;
         CurrentHealth = TotalHealth;
     }
@@ -44,6 +51,9 @@ public class Health : MonoBehaviour
             CurrentHealth -= damage;
             var dm = Instantiate(DamageNumber, collision.gameObject.transform.position, Quaternion.identity);
             dm.Init(damage);
+            _as.clip = HitSounds[Random.Range(0, HitSounds.Count)];
+            _as.pitch = Random.Range(Pitch.x, Pitch.y);
+            _as.Play();
         }
     }
 }

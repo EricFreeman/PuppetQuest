@@ -10,6 +10,10 @@ public class GameTextController : MonoBehaviour
     public PlayableDirector IntroAudio;
     public PlayableDirector GoodJobCrate;
     public PlayableDirector CrateJob;
+    public PlayableDirector GoblinSpotted;
+    public PlayableDirector FirstGoblinKilled;
+    public PlayableDirector BossFightStarted;
+    public PlayableDirector GameOver;
 
     private AudioSource _as;
 

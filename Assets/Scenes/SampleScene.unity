@@ -1846,6 +1846,62 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236088815}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &265921496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 265921497}
+  - component: {fileID: 265921498}
+  m_Layer: 0
+  m_Name: BossFightStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &265921497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265921496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 414829086}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &265921498
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265921496}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c7b24459ac8b4d64a9bf418a71c95e7a, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8052859808534955639, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 414829085}
+  - key: {fileID: 1192110880634608959, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7827659965954132260, guid: f1d358c03695f9f4e972445d54c16507, type: 2}
+    value: {fileID: 414829085}
+  - key: {fileID: 3347795711262111716, guid: c7b24459ac8b4d64a9bf418a71c95e7a, type: 2}
+    value: {fileID: 414829085}
+  m_ExposedReferences:
+    m_References: []
 --- !u!43 &270162372
 Mesh:
   m_ObjectHideFlags: 0
@@ -2010,6 +2066,60 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &317000798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317000799}
+  - component: {fileID: 317000800}
+  m_Layer: 0
+  m_Name: FirstGoblinKilled
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317000799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317000798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 414829086}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &317000800
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317000798}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: f1d358c03695f9f4e972445d54c16507, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8052859808534955639, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 414829085}
+  - key: {fileID: 1192110880634608959, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7827659965954132260, guid: f1d358c03695f9f4e972445d54c16507, type: 2}
+    value: {fileID: 414829085}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &332954221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,6 +3317,10 @@ Transform:
   - {fileID: 959422971}
   - {fileID: 2146547241}
   - {fileID: 1079534049}
+  - {fileID: 810086131}
+  - {fileID: 317000799}
+  - {fileID: 265921497}
+  - {fileID: 651808241}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3828,6 +3942,64 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &651808240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651808241}
+  - component: {fileID: 651808242}
+  m_Layer: 0
+  m_Name: GameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &651808241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651808240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 414829086}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &651808242
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651808240}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: a81a55b1131f25d4c96e559c24839be4, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8052859808534955639, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 414829085}
+  - key: {fileID: 1192110880634608959, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7827659965954132260, guid: f1d358c03695f9f4e972445d54c16507, type: 2}
+    value: {fileID: 414829085}
+  - key: {fileID: 3347795711262111716, guid: c7b24459ac8b4d64a9bf418a71c95e7a, type: 2}
+    value: {fileID: 414829085}
+  - key: {fileID: 7815495013400382040, guid: a81a55b1131f25d4c96e559c24839be4, type: 2}
+    value: {fileID: 414829085}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,6 +4195,58 @@ Transform:
   m_Father: {fileID: 709583217}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &810086130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810086131}
+  - component: {fileID: 810086132}
+  m_Layer: 0
+  m_Name: GoblinSpotted
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &810086131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810086130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 414829086}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &810086132
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810086130}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8052859808534955639, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 414829085}
+  - key: {fileID: 1192110880634608959, guid: 3356051167e12084eb649fd4a6d70c52, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &837867788
 GameObject:
   m_ObjectHideFlags: 0
